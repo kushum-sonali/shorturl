@@ -1,9 +1,10 @@
 const mongoose=require("mongoose");
- mongoose.connect("mongodb://0.0.0.0/url",{
+const dotenv=require("dotenv");
+dotenv.config();
+ mongoose.connect(process.env.MONGO_URL,{
     }).then(()=>{
         console.log("connection is successful");
     }
-    
     ).catch((e)=>{
         console.log(e);
     }
