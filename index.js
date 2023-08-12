@@ -7,8 +7,13 @@ const cors=require("cors");
 const app=express();
 app.use(express.json());
 const port= 3000;
-app.use(cors());
 app.use("/url",urlrouter);
+const corsOptions = {
+    origin: '*',
+    
+}
+
+app.use(cors(corsOptions));
 
 
 app.get("/:shortId",async(req,res)=>{
